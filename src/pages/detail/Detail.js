@@ -56,7 +56,7 @@ export function Detail() {
           <div className="back-button" onClick={() => navigate(-1)}>
             <IoChevronBackOutline fontSize={24} />
           </div>
-          <h1 className="detail-title">{currentItem?.name ?? "New Item"}</h1>
+          <h1 className="detail-title">{currentItem?.name ?? "Nuovo allenamento"}</h1>
         </div>
   
         <form className="page-body" onSubmit={validateForm}>
