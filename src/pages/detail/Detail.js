@@ -14,6 +14,7 @@ export function Detail() {
   
     const nameRef = useRef();
     const descriptionRef = useRef();
+    const circuitRef = useRef();
     const navigate = useNavigate();
   
     const [errorMessage, errorMessageState] = useState("");
@@ -23,7 +24,8 @@ export function Detail() {
   
       const name = nameRef.current.value;
       const description = descriptionRef.current.value;
-  
+      const isCircuito = circuitRef.current.checked ;
+
       if (!name || !description) return buildErrorMessage();
   
       navigate(-1);
@@ -33,8 +35,9 @@ export function Detail() {
             ...currentItem,
             name,
             description,
+            isCircuito,
           })
-        : addApp({ name, description });
+        : addApp({ name, description, isCircuito });
   
       store.dispatch(action);
     };
@@ -75,6 +78,10 @@ export function Detail() {
               defaultValue={currentItem?.description}
               ref={descriptionRef}
             />
+          </div>
+          <div className="input-wrapper">
+            <input type="checkbox" id="circuito" defaultChecked={!!currentItem?.isCircuito} ref={circuitRef}/>
+            <label form="circuito" className="circuit">Circuito</label>
           </div>
   
           {!!errorMessage && <p className="error-message">{errorMessage}</p>}

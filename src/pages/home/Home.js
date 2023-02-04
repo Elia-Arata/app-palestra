@@ -18,6 +18,7 @@ export function Home() {
                 <ListTile
                 name={i.name}
                 description={i.description}
+                isCircuito={i.isCircuito}
                 key={i.id}
                 id={i.id}
                 />
