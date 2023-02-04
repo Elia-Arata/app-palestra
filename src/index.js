@@ -11,12 +11,12 @@ import { persistentStore, store } from "./store/store";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <Provider store={store}>
+    <Provider store={store}>
       <PersistGate loading={null} persistor={persistentStore}>
         <BrowserRouter>
-    <App />
-    </BrowserRouter>
-    </PersistGate>
+          <App />
+        </BrowserRouter>
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );
