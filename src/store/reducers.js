@@ -6,16 +6,19 @@ const initialState = {
       id: "0",
       name: "Esercizio 1",
       description: "Che allenamento vuoi fare?",
+      isCircuito: false,
     },
     {
       id: "1",
       name: "Esercizio 2",
       description: "Che allenamento vuoi fare?",
+      isCircuito: false,
     },
     {
       id: "2",
       name: "Esercizio 3",
       description: "Che allenamento vuoi fare?",
+      isCircuito: false,
     },
   ],
 };
@@ -23,7 +26,7 @@ const initialState = {
 export function rootReducer(state = initialState, action) {
   if (action.type === ADD_APP) {
     const newApp = {
-      id: state.todoApp.length.toString(),
+      id: state.appList.length.toString(),
       ...action.payload,
     };
 
